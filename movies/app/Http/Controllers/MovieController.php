@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\View;
 use Laraveltip\Domain\MovieRepository;
 
 class MovieController extends Controller
@@ -24,9 +25,10 @@ class MovieController extends Controller
     /**
      *
      */
-    public function __invoke()
+    public function index()
     {
         $movies = $this->movies->getMovies();
+
         return View::make('movies')->with('movies', $movies);
     }
 

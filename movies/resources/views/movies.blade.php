@@ -11,14 +11,19 @@
 </head>
 <body>
 <div>
-    <table>
-        <th>
-            <td>Titulo</td>
-            <td>Titulo Original</td>
-            <td>Puntuación</td>
-        </th>
+    <table border="1">
+        <tr>
+            <td style="align:left;">Titulo</td>
+            <td style="align:left;">Titulo Original</td>
+            <td style="align:left;">Puntuación</td>
+        </tr>
         <tbody>
-           @foreach()
+           @foreach($movies AS $movie)
+               <tr>
+                   <td style="align:left;">{{ $movie->title }}</td>
+                   <td style="align:left;">{{ $movie->original_title }}</td>
+                   <td style="align:left;">{{ $movie->vote_average }}</td>
+               </tr>
            @endforeach
         </tbody>
     </table>
